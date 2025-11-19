@@ -7,6 +7,9 @@
 *.o
 *.obj
 
+# Clang index files
+*.idx
+
 # Precompiled Headers
 *.gch
 *.pch

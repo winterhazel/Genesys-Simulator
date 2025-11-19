@@ -115,7 +115,7 @@ bool CppSerializer::dump(std::ostream& output) {
 			// connect
 			auto target = nextComponent->getName();
 			output << indent(1) // << (origin.find(".") != std::string::npos || target.find(".") != std::string::npos ? "// " : "")
-					<< origin + "->getConnections()->insert(" + target + ", " + std::to_string(nextPort) + ");\n";
+					<< origin + "->getConnectionManager()->insert(" + target + ", " + std::to_string(nextPort) + ");\n";
 		}
 	}
 	output << indent(1) << "\n";

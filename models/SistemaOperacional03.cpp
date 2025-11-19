@@ -75,29 +75,29 @@ int main(int argc, char** argv) {
 	Dispose* Dispose_1 = plugins->newInstance<Dispose>(model, "Dispose_1");
 	
 	// connect model components
-	Create_1->getConnections()->insert(Assign_1, 0);
-	Assign_1->getConnections()->insert(Seize_1, 0);
-	Seize_1->getConnections()->insert(Decide_1, 0);
-	Decide_1->getConnections()->insert(Assign_2, 0);
-	Decide_1->getConnections()->insert(Assign_3, 0);
-	Decide_1->getConnections()->insert(Assign_4, 0);
-	Decide_1->getConnections()->insert(Assign_5, 0);
-	Assign_2->getConnections()->insert(Route_1, 0);
-	Assign_3->getConnections()->insert(Route_1, 0);
-	Assign_4->getConnections()->insert(Route_1, 0);
-	Assign_5->getConnections()->insert(Route_1, 0);
-	Enter_1->getConnections()->insert(Seize_2, 0);
-	Seize_2->getConnections()->insert(Decide_2, 0);
-	Decide_2->getConnections()->insert(Assign_6, 0);
-	Decide_2->getConnections()->insert(Assign_7, 0);
-	Assign_6->getConnections()->insert(Delay_1, 0);
-	Assign_7->getConnections()->insert(Delay_1, 0);
-	Delay_1->getConnections()->insert(Release_1, 0);
-	Release_1->getConnections()->insert(Decide_3, 0);
-	Decide_3->getConnections()->insert(Route_2, 0);
-	Decide_3->getConnections()->insert(Route_3, 0);
-	Enter_2->getConnections()->insert(Release_2, 0);
-	Release_2->getConnections()->insert(Dispose_1, 0);
+	Create_1->getConnectionManager()->insert(Assign_1, 0);
+	Assign_1->getConnectionManager()->insert(Seize_1, 0);
+	Seize_1->getConnectionManager()->insert(Decide_1, 0);
+	Decide_1->getConnectionManager()->insert(Assign_2, 0);
+	Decide_1->getConnectionManager()->insert(Assign_3, 0);
+	Decide_1->getConnectionManager()->insert(Assign_4, 0);
+	Decide_1->getConnectionManager()->insert(Assign_5, 0);
+	Assign_2->getConnectionManager()->insert(Route_1, 0);
+	Assign_3->getConnectionManager()->insert(Route_1, 0);
+	Assign_4->getConnectionManager()->insert(Route_1, 0);
+	Assign_5->getConnectionManager()->insert(Route_1, 0);
+	Enter_1->getConnectionManager()->insert(Seize_2, 0);
+	Seize_2->getConnectionManager()->insert(Decide_2, 0);
+	Decide_2->getConnectionManager()->insert(Assign_6, 0);
+	Decide_2->getConnectionManager()->insert(Assign_7, 0);
+	Assign_6->getConnectionManager()->insert(Delay_1, 0);
+	Assign_7->getConnectionManager()->insert(Delay_1, 0);
+	Delay_1->getConnectionManager()->insert(Release_1, 0);
+	Release_1->getConnectionManager()->insert(Decide_3, 0);
+	Decide_3->getConnectionManager()->insert(Route_2, 0);
+	Decide_3->getConnectionManager()->insert(Route_3, 0);
+	Enter_2->getConnectionManager()->insert(Release_2, 0);
+	Release_2->getConnectionManager()->insert(Dispose_1, 0);
 	
 	// set simulation parameters
 	ModelSimulation* sim = model->getSimulation();

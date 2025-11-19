@@ -42,10 +42,7 @@ template <> struct TraitsTerminalApp<GenesysApplication_if> {
 	//typedef Smart_Delay Application;
     //typedef Smart_DefaultModalModel Application;
     //typedef Smart_Dummy Application;
-    //typedef Smart_EFSM1 Application;
-    //typedef Smart_EFSM2 Application;
 	//typedef Smart_Failures Application;
-	//typedef Smart_FiniteStateMachine Application;
 	//typedef Smart_HoldSearchRemove Application;
 	//typedef Smart_MarkovChain Application;
 	//typedef Smart_ModelInfoModelSimulation Application;

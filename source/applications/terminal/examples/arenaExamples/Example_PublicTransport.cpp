@@ -235,13 +235,13 @@ int Example_PublicTransport::main(int argc, char** argv) {
 	dropOff3->getConnectionManager()->insert(route0); //"Point3");
 
 	/*
-	search1->getConnections()->insert(pickUp1); //"InitialPoint");
-	search2->getConnections()->insert(pickUp2); //"Point2");
-	search3->getConnections()->insert(pickUp3); //"Point3");
+	search1->getConnectionManager()->insert(pickUp1); //"InitialPoint");
+	search2->getConnectionManager()->insert(pickUp2); //"Point2");
+	search3->getConnectionManager()->insert(pickUp3); //"Point3");
         
-	pickUp1->getConnections()->insert(delay1); //"InitialPoint");
-	pickUp2->getConnections()->insert(delay2); //"Point2");
-	pickUp3->getConnections()->insert(delay3); //"Point3");
+	pickUp1->getConnectionManager()->insert(delay1); //"InitialPoint");
+	pickUp2->getConnectionManager()->insert(delay2); //"Point2");
+	pickUp3->getConnectionManager()->insert(delay3); //"Point3");
         
 	test workaround segfault*/
 	search1->getConnectionManager()->insert(delay1); //"InitialPoint");

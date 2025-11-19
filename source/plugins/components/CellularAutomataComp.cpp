@@ -55,7 +55,7 @@ ModelComponent* CellularAutomataComp::LoadInstance(Model* model, PersistenceReco
 
 void CellularAutomataComp::_onDispatchEvent(Entity* entity, unsigned int inputPortNumber) {
 	_cellularAutomata->step();
-	_parentModel->sendEntityToComponent(entity, this->getConnections()->getFrontConnection());
+	_parentModel->sendEntityToComponent(entity, this->getConnectionManager()->getFrontConnection());
 }
 
 bool CellularAutomataComp::_loadInstance(PersistenceRecord *fields) {

@@ -50,8 +50,8 @@ int Smart_CellularAutomata::main(int argc, char** argv) {
 	ca->setStateSetType(CellularAutomataComp::StateSetType::ENUMERATED);
 	Dispose* dispose1 = plugins->newInstance<Dispose>(model);
 	// connect model components to create a "workflow"
-	create1->getConnections()->insert(ca);
-	ca->getConnections()->insert(dispose1);
+	create1->getConnectionManager()->insert(ca);
+	ca->getConnectionManager()->insert(dispose1);
 	// set options, save and simulate
 	model->getSimulation()->setReplicationLength(60, Util::TimeUnit::second);
 	model->getSimulation()->setTerminatingCondition("count(Dispose_1.CountNumberIn)>30");

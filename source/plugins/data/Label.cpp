@@ -86,7 +86,7 @@ ModelComponent* Label::getEnterIntoLabelComponent() const {
 }
 
 void Label::sendEntityToLabelComponent(Entity* entity, double timeDelay) {
-	//_parentModel->sendEntityToComponent(entity, _enteringLabelComponent->getConnections()->getFrontConnection(), timeDelay);
+	//_parentModel->sendEntityToComponent(entity, _enteringLabelComponent->getConnectionManager()->getFrontConnection(), timeDelay);
 	_parentModel->sendEntityToComponent(entity, _enteringLabelComponent, timeDelay);
 }
 

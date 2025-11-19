@@ -63,8 +63,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/577f3b86/Smart_EntitiesProcessedByPriority.o \
 	${OBJECTDIR}/_ext/577f3b86/Smart_EvaluatingConditionsBeforeEnteringQueue.o \
 	${OBJECTDIR}/_ext/577f3b86/Smart_Expression.o \
-	${OBJECTDIR}/_ext/296208d5/Smart_EFSM1.o \
-	${OBJECTDIR}/_ext/296208d5/Smart_EFSM2.o \
 	${OBJECTDIR}/_ext/577f3b86/Smart_InventoryAndHoldingCosts.o \
 	${OBJECTDIR}/_ext/577f3b86/Smart_MaxArrivalsField.o \
 	${OBJECTDIR}/_ext/577f3b86/Smart_ModelRunUntil1000Parts.o \
@@ -94,7 +92,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/296208d5/Smart_Delay.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_Dummy.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_Failures.o \
-	${OBJECTDIR}/_ext/296208d5/Smart_FiniteStateMachine.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_HoldSearchRemove.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_ModelInfoModelSimulation.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_ODE.o \
@@ -112,6 +109,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/296208d5/Smart_SimulationControlResponse.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_WaitScanCondition.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_WaitSignal.o \
+	${OBJECTDIR}/_ext/296208d5/Smaty_DefaultModalModel.o \
 	${OBJECTDIR}/_ext/18d98d98/AnElectronicAssemblyAndTestSystem.o \
 	${OBJECTDIR}/_ext/18d98d98/FullSimulationOfComplexModel.o \
 	${OBJECTDIR}/_ext/18d98d98/Half_Adder.o \
@@ -182,6 +180,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/f13e5db9/CppForG.o \
 	${OBJECTDIR}/_ext/f13e5db9/Create.o \
 	${OBJECTDIR}/_ext/f13e5db9/Decide.o \
+	${OBJECTDIR}/_ext/f13e5db9/DefaultModalModel.o \
 	${OBJECTDIR}/_ext/f13e5db9/Delay.o \
 	${OBJECTDIR}/_ext/f13e5db9/DiffEquations.o \
 	${OBJECTDIR}/_ext/f13e5db9/Dispose.o \
@@ -189,10 +188,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/f13e5db9/DummyComponent.o \
 	${OBJECTDIR}/_ext/f13e5db9/Enter.o \
 	${OBJECTDIR}/_ext/f13e5db9/Exit.o \
-	${OBJECTDIR}/_ext/f13e5db9/FSM_ModalModel.o \
-	${OBJECTDIR}/_ext/f13e5db9/FSM_State.o \
-	${OBJECTDIR}/_ext/f13e5db9/FSM_Transition.o \
-	${OBJECTDIR}/_ext/f13e5db9/FiniteStateMachine.o \
 	${OBJECTDIR}/_ext/f13e5db9/LSODE.o \
 	${OBJECTDIR}/_ext/f13e5db9/Leave.o \
 	${OBJECTDIR}/_ext/f13e5db9/MarkovChain.o \
@@ -221,10 +216,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/f13e5db9/Unstore.o \
 	${OBJECTDIR}/_ext/f13e5db9/Wait.o \
 	${OBJECTDIR}/_ext/f13e5db9/Write.o \
+	${OBJECTDIR}/_ext/f13e5db9/DefaultNode.o \
 	${OBJECTDIR}/_ext/ccae408d/AssignmentItem.o \
 	${OBJECTDIR}/_ext/ccae408d/CppCompiler.o \
 	${OBJECTDIR}/_ext/ccae408d/DummyElement.o \
-	${OBJECTDIR}/_ext/ccae408d/EFSM.o \
 	${OBJECTDIR}/_ext/ccae408d/EntityGroup.o \
 	${OBJECTDIR}/_ext/ccae408d/Failure.o \
 	${OBJECTDIR}/_ext/ccae408d/File.o \
@@ -395,14 +390,6 @@ ${OBJECTDIR}/_ext/577f3b86/Smart_Expression.o: ../../source/applications/termina
 	${MKDIR} -p ${OBJECTDIR}/_ext/577f3b86
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/577f3b86/Smart_Expression.o ../../source/applications/terminal/examples/arenaSmarts/Smart_Expression.cpp
 
-${OBJECTDIR}/_ext/296208d5/Smart_EFSM1.o: ../../source/applications/terminal/examples/smarts/Smart_EFSM1.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
-	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/296208d5/Smart_EFSM1.o ../../source/applications/terminal/examples/smarts/Smart_EFSM1.cpp
-
-${OBJECTDIR}/_ext/296208d5/Smart_EFSM2.o: ../../source/applications/terminal/examples/smarts/Smart_EFSM2.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
-	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/296208d5/Smart_EFSM2.o ../../source/applications/terminal/examples/smarts/Smart_EFSM2.cpp
-
 ${OBJECTDIR}/_ext/577f3b86/Smart_InventoryAndHoldingCosts.o: ../../source/applications/terminal/examples/arenaSmarts/Smart_InventoryAndHoldingCosts.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/577f3b86
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/577f3b86/Smart_InventoryAndHoldingCosts.o ../../source/applications/terminal/examples/arenaSmarts/Smart_InventoryAndHoldingCosts.cpp
@@ -439,9 +426,9 @@ ${OBJECTDIR}/_ext/577f3b86/Smart_ProcessArena.o: ../../source/applications/termi
 	${MKDIR} -p ${OBJECTDIR}/_ext/577f3b86
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/577f3b86/Smart_ProcessArena.o ../../source/applications/terminal/examples/arenaSmarts/Smart_ProcessArena.cpp
 
-${OBJECTDIR}/_ext/577f3b86/Smart_Record.o: ../../source/applications/terminal/examples/arenaSmarts/Smart_Record.cpp
+${OBJECTDIR}/_ext/577f3b86/Smart_Record.o: ../../source/applications/terminal/examples/smarts/Smart_Record.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/577f3b86
-	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/577f3b86/Smart_Record.o ../../source/applications/terminal/examples/arenaSmarts/Smart_Record.cpp
+	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/577f3b86/Smart_Record.o ../../source/applications/terminal/examples/smarts/Smart_Record.cpp
 
 ${OBJECTDIR}/_ext/577f3b86/Smart_RemovingAndReorderingEntitiesInAQueue.o: ../../source/applications/terminal/examples/arenaSmarts/Smart_RemovingAndReorderingEntitiesInAQueue.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/577f3b86
@@ -519,10 +506,6 @@ ${OBJECTDIR}/_ext/296208d5/Smart_Failures.o: ../../source/applications/terminal/
 	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/296208d5/Smart_Failures.o ../../source/applications/terminal/examples/smarts/Smart_Failures.cpp
 
-${OBJECTDIR}/_ext/296208d5/Smart_FiniteStateMachine.o: ../../source/applications/terminal/examples/smarts/Smart_FiniteStateMachine.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
-	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/296208d5/Smart_FiniteStateMachine.o ../../source/applications/terminal/examples/smarts/Smart_FiniteStateMachine.cpp
-
 ${OBJECTDIR}/_ext/296208d5/Smart_HoldSearchRemove.o: ../../source/applications/terminal/examples/smarts/Smart_HoldSearchRemove.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/296208d5/Smart_HoldSearchRemove.o ../../source/applications/terminal/examples/smarts/Smart_HoldSearchRemove.cpp
@@ -590,6 +573,10 @@ ${OBJECTDIR}/_ext/296208d5/Smart_WaitScanCondition.o: ../../source/applications/
 ${OBJECTDIR}/_ext/296208d5/Smart_WaitSignal.o: ../../source/applications/terminal/examples/smarts/Smart_WaitSignal.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/296208d5/Smart_WaitSignal.o ../../source/applications/terminal/examples/smarts/Smart_WaitSignal.cpp
+
+${OBJECTDIR}/_ext/296208d5/Smaty_DefaultModalModel.o: ../../source/applications/terminal/examples/smarts/Smaty_DefaultModalModel.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
+	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/296208d5/Smaty_DefaultModalModel.o ../../source/applications/terminal/examples/smarts/Smaty_DefaultModalModel.cpp
 
 ${OBJECTDIR}/_ext/18d98d98/AnElectronicAssemblyAndTestSystem.o: ../../source/applications/terminal/examples/teaching/AnElectronicAssemblyAndTestSystem.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/18d98d98
@@ -871,6 +858,10 @@ ${OBJECTDIR}/_ext/f13e5db9/Decide.o: ../../source/plugins/components/Decide.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/f13e5db9/Decide.o ../../source/plugins/components/Decide.cpp
 
+${OBJECTDIR}/_ext/f13e5db9/DefaultModalModel.o: ../../source/plugins/components/DefaultModalModel.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
+	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/f13e5db9/DefaultModalModel.o ../../source/plugins/components/DefaultModalModel.cpp
+
 ${OBJECTDIR}/_ext/f13e5db9/Delay.o: ../../source/plugins/components/Delay.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/f13e5db9/Delay.o ../../source/plugins/components/Delay.cpp
@@ -898,22 +889,6 @@ ${OBJECTDIR}/_ext/f13e5db9/Enter.o: ../../source/plugins/components/Enter.cpp
 ${OBJECTDIR}/_ext/f13e5db9/Exit.o: ../../source/plugins/components/Exit.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/f13e5db9/Exit.o ../../source/plugins/components/Exit.cpp
-
-${OBJECTDIR}/_ext/f13e5db9/FSM_ModalModel.o: ../../source/plugins/components/FSM_ModalModel.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
-	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/f13e5db9/FSM_ModalModel.o ../../source/plugins/components/FSM_ModalModel.cpp
-
-${OBJECTDIR}/_ext/f13e5db9/FSM_State.o: ../../source/plugins/components/FSM_State.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
-	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/f13e5db9/FSM_State.o ../../source/plugins/components/FSM_State.cpp
-
-${OBJECTDIR}/_ext/f13e5db9/FSM_Transition.o: ../../source/plugins/components/FSM_Transition.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
-	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/f13e5db9/FSM_Transition.o ../../source/plugins/components/FSM_Transition.cpp
-
-${OBJECTDIR}/_ext/f13e5db9/FiniteStateMachine.o: ../../source/plugins/components/FiniteStateMachine.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
-	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/f13e5db9/FiniteStateMachine.o ../../source/plugins/components/FiniteStateMachine.cpp
 
 ${OBJECTDIR}/_ext/f13e5db9/LSODE.o: ../../source/plugins/components/LSODE.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
@@ -1027,6 +1002,10 @@ ${OBJECTDIR}/_ext/f13e5db9/Write.o: ../../source/plugins/components/Write.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/f13e5db9/Write.o ../../source/plugins/components/Write.cpp
 
+${OBJECTDIR}/_ext/f13e5db9/DefaultNode.o: ../../source/plugins/components/network/DefaultNode.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
+	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/f13e5db9/DefaultNode.o ../../source/plugins/components/network/DefaultNode.cpp
+
 ${OBJECTDIR}/_ext/ccae408d/AssignmentItem.o: ../../source/plugins/data/AssignmentItem.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/ccae408d
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/ccae408d/AssignmentItem.o ../../source/plugins/data/AssignmentItem.cpp
@@ -1038,10 +1017,6 @@ ${OBJECTDIR}/_ext/ccae408d/CppCompiler.o: ../../source/plugins/data/CppCompiler.
 ${OBJECTDIR}/_ext/ccae408d/DummyElement.o: ../../source/plugins/data/DummyElement.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/ccae408d
 	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/ccae408d/DummyElement.o ../../source/plugins/data/DummyElement.cpp
-
-${OBJECTDIR}/_ext/ccae408d/EFSM.o: ../../source/plugins/data/EFSM.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/ccae408d
-	$(COMPILE.cc) -g -I../../source/gtest -std=c++14 -o ${OBJECTDIR}/_ext/ccae408d/EFSM.o ../../source/plugins/data/EFSM.cpp
 
 ${OBJECTDIR}/_ext/ccae408d/EntityGroup.o: ../../source/plugins/data/EntityGroup.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/ccae408d
@@ -1449,30 +1424,6 @@ ${OBJECTDIR}/_ext/577f3b86/Smart_DelayBasedOnReplication_nomain.o: ${OBJECTDIR}/
 	    ${CP} ${OBJECTDIR}/_ext/577f3b86/Smart_DelayBasedOnReplication.o ${OBJECTDIR}/_ext/577f3b86/Smart_DelayBasedOnReplication_nomain.o;\
 	fi
 
-${OBJECTDIR}/_ext/296208d5/Smart_EFSM1_nomain.o: ${OBJECTDIR}/_ext/296208d5/Smart_EFSM1.o ../../source/applications/terminal/examples/smarts/Smart_EFSM1.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/296208d5/Smart_EFSM1.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/296208d5/Smart_EFSM1_nomain.o ../../source/applications/terminal/examples/smarts/Smart_EFSM1.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/_ext/296208d5/Smart_EFSM1.o ${OBJECTDIR}/_ext/296208d5/Smart_EFSM1_nomain.o;\
-	fi
-
-${OBJECTDIR}/_ext/296208d5/Smart_EFSM2_nomain.o: ${OBJECTDIR}/_ext/296208d5/Smart_EFSM2.o ../../source/applications/terminal/examples/smarts/Smart_EFSM2.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/296208d5/Smart_EFSM2.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/296208d5/Smart_EFSM2_nomain.o ../../source/applications/terminal/examples/smarts/Smart_EFSM2.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/_ext/296208d5/Smart_EFSM2.o ${OBJECTDIR}/_ext/296208d5/Smart_EFSM2_nomain.o;\
-	fi
-
 ${OBJECTDIR}/_ext/577f3b86/Smart_EntitiesProcessedByPriority_nomain.o: ${OBJECTDIR}/_ext/577f3b86/Smart_EntitiesProcessedByPriority.o ../../source/applications/terminal/examples/arenaSmarts/Smart_EntitiesProcessedByPriority.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/577f3b86
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/577f3b86/Smart_EntitiesProcessedByPriority.o`; \
@@ -1617,14 +1568,14 @@ ${OBJECTDIR}/_ext/577f3b86/Smart_ProcessArena_nomain.o: ${OBJECTDIR}/_ext/577f3b
 	    ${CP} ${OBJECTDIR}/_ext/577f3b86/Smart_ProcessArena.o ${OBJECTDIR}/_ext/577f3b86/Smart_ProcessArena_nomain.o;\
 	fi
 
-${OBJECTDIR}/_ext/577f3b86/Smart_Record_nomain.o: ${OBJECTDIR}/_ext/577f3b86/Smart_Record.o ../../source/applications/terminal/examples/arenaSmarts/Smart_Record.cpp 
+${OBJECTDIR}/_ext/577f3b86/Smart_Record_nomain.o: ${OBJECTDIR}/_ext/577f3b86/Smart_Record.o ../../source/applications/terminal/examples/smarts/Smart_Record.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/577f3b86
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/577f3b86/Smart_Record.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
-	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/577f3b86/Smart_Record_nomain.o ../../source/applications/terminal/examples/arenaSmarts/Smart_Record.cpp;\
+	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/577f3b86/Smart_Record_nomain.o ../../source/applications/terminal/examples/smarts/Smart_Record.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/_ext/577f3b86/Smart_Record.o ${OBJECTDIR}/_ext/577f3b86/Smart_Record_nomain.o;\
 	fi
@@ -1857,18 +1808,6 @@ ${OBJECTDIR}/_ext/296208d5/Smart_Failures_nomain.o: ${OBJECTDIR}/_ext/296208d5/S
 	    ${CP} ${OBJECTDIR}/_ext/296208d5/Smart_Failures.o ${OBJECTDIR}/_ext/296208d5/Smart_Failures_nomain.o;\
 	fi
 
-${OBJECTDIR}/_ext/296208d5/Smart_FiniteStateMachine_nomain.o: ${OBJECTDIR}/_ext/296208d5/Smart_FiniteStateMachine.o ../../source/applications/terminal/examples/smarts/Smart_FiniteStateMachine.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/296208d5/Smart_FiniteStateMachine.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/296208d5/Smart_FiniteStateMachine_nomain.o ../../source/applications/terminal/examples/smarts/Smart_FiniteStateMachine.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/_ext/296208d5/Smart_FiniteStateMachine.o ${OBJECTDIR}/_ext/296208d5/Smart_FiniteStateMachine_nomain.o;\
-	fi
-
 ${OBJECTDIR}/_ext/296208d5/Smart_HoldSearchRemove_nomain.o: ${OBJECTDIR}/_ext/296208d5/Smart_HoldSearchRemove.o ../../source/applications/terminal/examples/smarts/Smart_HoldSearchRemove.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/296208d5/Smart_HoldSearchRemove.o`; \
@@ -2071,6 +2010,18 @@ ${OBJECTDIR}/_ext/296208d5/Smart_WaitSignal_nomain.o: ${OBJECTDIR}/_ext/296208d5
 	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/296208d5/Smart_WaitSignal_nomain.o ../../source/applications/terminal/examples/smarts/Smart_WaitSignal.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/_ext/296208d5/Smart_WaitSignal.o ${OBJECTDIR}/_ext/296208d5/Smart_WaitSignal_nomain.o;\
+	fi
+
+${OBJECTDIR}/_ext/296208d5/Smaty_DefaultModalModel_nomain.o: ${OBJECTDIR}/_ext/296208d5/Smaty_DefaultModalModel.o ../../source/applications/terminal/examples/smarts/Smaty_DefaultModalModel.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/296208d5/Smaty_DefaultModalModel.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/296208d5/Smaty_DefaultModalModel_nomain.o ../../source/applications/terminal/examples/smarts/Smaty_DefaultModalModel.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/_ext/296208d5/Smaty_DefaultModalModel.o ${OBJECTDIR}/_ext/296208d5/Smaty_DefaultModalModel_nomain.o;\
 	fi
 
 ${OBJECTDIR}/_ext/18d98d98/AnElectronicAssemblyAndTestSystem_nomain.o: ${OBJECTDIR}/_ext/18d98d98/AnElectronicAssemblyAndTestSystem.o ../../source/applications/terminal/examples/teaching/AnElectronicAssemblyAndTestSystem.cpp 
@@ -2913,6 +2864,18 @@ ${OBJECTDIR}/_ext/f13e5db9/Decide_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/Decide.o 
 	    ${CP} ${OBJECTDIR}/_ext/f13e5db9/Decide.o ${OBJECTDIR}/_ext/f13e5db9/Decide_nomain.o;\
 	fi
 
+${OBJECTDIR}/_ext/f13e5db9/DefaultModalModel_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/DefaultModalModel.o ../../source/plugins/components/DefaultModalModel.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/f13e5db9/DefaultModalModel.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/f13e5db9/DefaultModalModel_nomain.o ../../source/plugins/components/DefaultModalModel.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/_ext/f13e5db9/DefaultModalModel.o ${OBJECTDIR}/_ext/f13e5db9/DefaultModalModel_nomain.o;\
+	fi
+
 ${OBJECTDIR}/_ext/f13e5db9/Delay_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/Delay.o ../../source/plugins/components/Delay.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/f13e5db9/Delay.o`; \
@@ -2983,57 +2946,6 @@ ${OBJECTDIR}/_ext/f13e5db9/Exit_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/Exit.o ../.
 	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/f13e5db9/Exit_nomain.o ../../source/plugins/components/Exit.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/_ext/f13e5db9/Exit.o ${OBJECTDIR}/_ext/f13e5db9/Exit_nomain.o;\
-	fi
-
-${OBJECTDIR}/_ext/f13e5db9/FSM_ModalModel_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/FSM_ModalModel.o ../../source/plugins/components/FSM_ModalModel.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/f13e5db9/FSM_ModalModel.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/f13e5db9/FSM_ModalModel_nomain.o ../../source/plugins/components/FSM_ModalModel.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/_ext/f13e5db9/FSM_ModalModel.o ${OBJECTDIR}/_ext/f13e5db9/FSM_ModalModel_nomain.o;\
-	fi
-
-${OBJECTDIR}/_ext/f13e5db9/FSM_State_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/FSM_State.o ../../source/plugins/components/FSM_State.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/f13e5db9/FSM_State.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/f13e5db9/FSM_State_nomain.o ../../source/plugins/components/FSM_State.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/_ext/f13e5db9/FSM_State.o ${OBJECTDIR}/_ext/f13e5db9/FSM_State_nomain.o;\
-	fi
-
-${OBJECTDIR}/_ext/f13e5db9/FSM_Transition_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/FSM_Transition.o ../../source/plugins/components/FSM_Transition.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/f13e5db9/FSM_Transition.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/f13e5db9/FSM_Transition_nomain.o ../../source/plugins/components/FSM_Transition.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/_ext/f13e5db9/FSM_Transition.o ${OBJECTDIR}/_ext/f13e5db9/FSM_Transition_nomain.o;\
-	fi
-
-${OBJECTDIR}/_ext/f13e5db9/FiniteStateMachine_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/FiniteStateMachine.o ../../source/plugins/components/FiniteStateMachine.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/f13e5db9/FiniteStateMachine.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/f13e5db9/FiniteStateMachine_nomain.o ../../source/plugins/components/FiniteStateMachine.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/_ext/f13e5db9/FiniteStateMachine.o ${OBJECTDIR}/_ext/f13e5db9/FiniteStateMachine_nomain.o;\
 	fi
 
 ${OBJECTDIR}/_ext/f13e5db9/LSODE_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/LSODE.o ../../source/plugins/components/LSODE.cpp 
@@ -3372,6 +3284,18 @@ ${OBJECTDIR}/_ext/f13e5db9/Write_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/Write.o ..
 	    ${CP} ${OBJECTDIR}/_ext/f13e5db9/Write.o ${OBJECTDIR}/_ext/f13e5db9/Write_nomain.o;\
 	fi
 
+${OBJECTDIR}/_ext/f13e5db9/DefaultNode_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/DefaultNode.o ../../source/plugins/components/network/DefaultNode.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/f13e5db9/DefaultNode.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/f13e5db9/DefaultNode_nomain.o ../../source/plugins/components/network/DefaultNode.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/_ext/f13e5db9/DefaultNode.o ${OBJECTDIR}/_ext/f13e5db9/DefaultNode_nomain.o;\
+	fi
+
 ${OBJECTDIR}/_ext/ccae408d/AssignmentItem_nomain.o: ${OBJECTDIR}/_ext/ccae408d/AssignmentItem.o ../../source/plugins/data/AssignmentItem.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/ccae408d
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/ccae408d/AssignmentItem.o`; \
@@ -3406,18 +3330,6 @@ ${OBJECTDIR}/_ext/ccae408d/DummyElement_nomain.o: ${OBJECTDIR}/_ext/ccae408d/Dum
 	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/ccae408d/DummyElement_nomain.o ../../source/plugins/data/DummyElement.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/_ext/ccae408d/DummyElement.o ${OBJECTDIR}/_ext/ccae408d/DummyElement_nomain.o;\
-	fi
-
-${OBJECTDIR}/_ext/ccae408d/EFSM_nomain.o: ${OBJECTDIR}/_ext/ccae408d/EFSM.o ../../source/plugins/data/EFSM.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/ccae408d
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/ccae408d/EFSM.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    $(COMPILE.cc) -g -I../../source/gtest -std=c++14 -Dmain=__nomain -o ${OBJECTDIR}/_ext/ccae408d/EFSM_nomain.o ../../source/plugins/data/EFSM.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/_ext/ccae408d/EFSM.o ${OBJECTDIR}/_ext/ccae408d/EFSM_nomain.o;\
 	fi
 
 ${OBJECTDIR}/_ext/ccae408d/EntityGroup_nomain.o: ${OBJECTDIR}/_ext/ccae408d/EntityGroup.o ../../source/plugins/data/EntityGroup.cpp 

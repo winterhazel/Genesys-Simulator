@@ -24,8 +24,8 @@ int main(int argc, char** argv) {
 	Dispose* Dispose_1 = plugins->newInstance<Dispose>(model, "Dispose_1");
 	
 	// connect model components
-	Create_1->getConnections()->insert(DummyComponent_1, 0);
-	DummyComponent_1->getConnections()->insert(Dispose_1, 0);
+	Create_1->getConnectionManager()->insert(DummyComponent_1, 0);
+	DummyComponent_1->getConnectionManager()->insert(Dispose_1, 0);
 	
 	// set simulation parameters
 	ModelSimulation* sim = model->getSimulation();
